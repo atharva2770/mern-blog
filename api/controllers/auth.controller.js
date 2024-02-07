@@ -23,7 +23,7 @@ export const signup = async (req, res, next) => {
         await newUser.save();
         res.json('Signup Successful');
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        next(error);
     }
 
 }
